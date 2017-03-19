@@ -1,0 +1,2 @@
+# Dynamic-routing-with-minimized-regenerators-and-minimized-regerations-at-each-regnerator-node
+In this paper we have proposed routing algorithms for translucent networks in a dynamic lightpath allocation environment in which requests for communication arrive continuously. In response to each request for communication, the objective is to establish, if possible, a path, from the source to the destination of the request for communication, so that a lightpath may be established, using the path that requires the fewest stages of regeneration.
