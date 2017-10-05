@@ -8,20 +8,19 @@
 #define N 100					
 using namespace std;
 int reg[] = {4, 7, 10, 12};
-char* file = "../paths/njlata/5.txt";
-char* datafile = "../data/njlata";
-char* testfile = "../testing/njlata200/1.txt";
+char file[100] = "../paths/nsfnet/5.txt";
+char datafile[100] = "../data/nsfnet";
+char testfile[100] = "../testing/nsfnet200/1.txt";
 
 int ct = 0;
 
 vector<int> colors;
-struct state
+typedef struct state
 {
 	int x;
 	vector<vector<int> > paths;
 	vector<vector<int> > pig;
-};
-typedef struct state state;
+}state;
 
 int edge_value(vector<int> a, vector<int> b)
 {
@@ -158,9 +157,11 @@ void display(vector<vector<int> > p)
 int n[MAX];
 void update_count(vector<vector<int> > p)
 {
+	//display(p);
 	for(unsigned int i = 0; i < p.size()-1; i++)
 	{
 		//n[p[i].front()-1]++;
+		printf("Node %d\n", p[i].back());
 		n[p[i].back()-1]++;
 	}
 	cout << "Reg: " ;
@@ -186,7 +187,7 @@ void routing(int s, int d)
 		{
 			display(obj.paths);
 			ct += obj.paths.size() - 1;
-			//update_count(obj.paths);
+			update_count(obj.paths);
 			return;
 		}
 		else

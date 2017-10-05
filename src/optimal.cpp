@@ -2,16 +2,16 @@
 #define v 14
 #define s 4
 #define p 10
-#define r 1000
+#define r 2000
 using namespace std;
 int adj[v+1][v+1];
 int X[v+1][v+1][s] = {0};
 int del[v+1] = {0};
 int W[p][s];
 int w[v][v][p];
-char *datafile = "../data/nsfnet";
-char *pathfile = "../paths/nsfnet/5.txt";
-char *testfile = "../testing/nsfnet100/1.txt";	
+char datafile[100] = "../data/nsfnet";
+char pathfile[100] = "../paths/nsfnet/5.txt";
+char testfile[100] = "../testing/nsfnet100/2.txt";	
 
 void fillwithzero()
 {

@@ -1,8 +1,6 @@
 /*Implementation of the rrp problem with 
 	minimum number of regenerator nodes with minimum regenerations at 
 	each node*/
-/*Implementation of the rrp problem with 
-	minimum number of regenerations*/
 
 #include <bits/stdc++.h>
 #include <vector>
@@ -11,9 +9,9 @@
 #define N 100					
 using namespace std;
 int reg[] = {4, 7, 10, 12};
-char* file = "../paths/nsfnet/5.txt";
-char* datafile = "../data/nsfnet";
-char* testfile = "../testing/nsfnet100/1.txt";
+char file[100] = "../paths/nsfnet/5.txt";
+char datafile[100] = "../data/nsfnet";
+char testfile[100] = "../testing/nsfnet200/1.txt";
 int n[MAX] = {0};
 int ct = 0;
 
@@ -135,7 +133,7 @@ vector<vector<int> > paths_to_reg(int x)
 
 pair<state,int> removeBest(vector<state> S, int d)
 {
-	unsigned int min = 0;
+	unsigned int min = 0, maxel;
 	int a[S.size()][MAX] = {0};
 	
 	for(unsigned int i = 0; i < S.size(); i++)
@@ -149,19 +147,18 @@ pair<state,int> removeBest(vector<state> S, int d)
 		for(unsigned int j = 0; j < p.size(); j++)
 			a[i][p[j].back()-1]++;
 	}
-	int f = 0;
-	/*for(unsigned int i = 0; i < S.size(); i++)
+
+	int row_sum = INT_MAX;
+	for(unsigned int i = 0; i < S.size(); i++)
 	{
+		int sum = 0, maxel = 0;
 		for(int j = 0; j < MAX; j++)
-		{
-			if(a[i][j] <= a[min][j])
-				f = 1;
-			else
-				f = 0;
-		}
-		if(f == 1)
-			min = i;
-	}*/
+			maxel = max(a[i][j], maxel);
+		for(int j = 0; j < MAX; j++)
+			 sum += maxel-a[i][j];
+		if(sum < row_sum)
+			row_sum = sum, min = i;
+	}/*
 	for(unsigned int i = 0; i < S.size(); i++)
 	{
 		for(int j = 0; j < MAX; j++)
@@ -169,7 +166,7 @@ pair<state,int> removeBest(vector<state> S, int d)
 			cout<<a[i][j] <<" ";
 		}
 		cout<<endl;
-	}
+	}*/
 	state s = S[min];
 	//S.erase(S.begin() + min);
 	return make_pair(s, min);

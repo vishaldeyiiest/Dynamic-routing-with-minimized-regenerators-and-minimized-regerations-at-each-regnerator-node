@@ -3,10 +3,11 @@
 	
 #include <bits/stdc++.h>
 #include <vector>
+#define MAX 14
 #define r 2000							//optical reach
 using namespace std;
 int reg[] = {4, 7, 10, 12};
-int n[14];
+int n[MAX];
 int ct = 0;
 
 vector<int> colors;
@@ -138,9 +139,43 @@ unsigned int calc_reg(vector<vector<int> > path)
 	return s;		
 }
 
+pair<state,int> removeBest_minStates(vector<state> S)
+{
+	unsigned int min = 0, maxel;
+	int a[S.size()][MAX] = {0};
+	
+	for(unsigned int i = 0; i < S.size(); i++)
+	{
+		for(int j = 0; j < MAX; j++)
+			a[i][j] = n[j];
+	}
+	for(unsigned int i = 0; i < S.size(); i++)
+	{
+		vector<vector<int> > p = S[i].paths;
+		for(unsigned int j = 0; j < p.size(); j++)
+			a[i][p[j].back()-1]++;
+	}
+
+	int row_sum = INT_MAX;
+	for(unsigned int i = 0; i < S.size(); i++)
+	{
+		int sum = 0, maxel = 0;
+		for(int j = 0; j < MAX; j++)
+			maxel = max(a[i][j], maxel);
+		for(int j = 0; j < MAX; j++)
+			 sum += maxel-a[i][j];
+		if(sum < row_sum)
+			row_sum = sum, min = i;
+	}
+	state s = S[min];
+	//S.erase(S.begin() + min);
+	return make_pair(s, min);
+}
+
 pair<state,int> removeBest(vector<state> S)
 {
-	unsigned int min = 0;
+	vector<int> min_states;
+	int min = 0;
 	
 	for(unsigned int i = 0; i < S.size(); i++)
 	{
@@ -149,7 +184,9 @@ pair<state,int> removeBest(vector<state> S)
 			if(calc_reg(S[i].paths) <= calc_reg(S[min].paths))
 				min = i;
 		}
+		min_states.push_back(min);
 	}
+	min = removeBest_minStates(S, min_states)
 	state s = S[min];
 	//S.erase(S.begin() + min);
 	return make_pair(s, min);
