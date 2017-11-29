@@ -1,26 +1,79 @@
 /*Implementation of the rrp problem with 
-	minimum number of regenerations*/
+	minimum number of regenerations at each node*/
 
 #include <bits/stdc++.h>
-#include <vector>
-#define r 2000	//optical reach
-#define MAX 14		
-#define N 100					
+#include "helper.cpp"
+#define r 1500	//optical reach		
+#define ncolor 1000
+#define N 100	
+#define MAXSEG 1
+#define REG_MAX 40			
 using namespace std;
-int reg[] = {4, 7, 10, 12};
+// ARPANET 
+#if 1
+#define MAX 20
+int reg[] = {3, 4, 5, 8, 10, 12, 14, 17};
+//int reg[] = {4, 5, 10, 13, 14, 17};
+char file[100] = "../paths/arpanet/5.txt";
+char datafile[100] = "../data/arpanet";
+#endif
+
+//EON
+#if 0
+#define MAX 28
+//int reg[] = {5, 6, 7, 10}; int reg[] = {5, 6, 7, 9}; ***int reg[] = {5, 6, 9, 10};
+int reg[] = {5, 9, 14, 16, 21, 23, 24, 25, 28};
+char file[100] = "../paths/eon/5.txt";
+char datafile[100] = "../data/eon";
+#endif
+
+// NSFNET 
+#if 0
+#define MAX 14
+int reg[] = {3, 4, 8, 12};
 char file[100] = "../paths/nsfnet/5.txt";
 char datafile[100] = "../data/nsfnet";
-char testfile[100] = "../testing/nsfnet20/1.txt";
+#endif
 
+//NJLATA
+#if 0
+#define MAX 11
+//int reg[] = {5, 6, 7, 10}; int reg[] = {5, 6, 7, 9}; ***int reg[] = {5, 6, 9, 10};
+int reg[] = {4, 8, 9, 10};
+char file[100] = "../paths/njlata/5.txt";
+char datafile[100] = "../data/njlata";
+#endif
+
+#if 0
+#define MAX 46
+int reg[] = {3, 5, 9, 12, 15, 19, 22, 25, 30, 34, 40, 45};
+char file[100] = "../paths/usanet/5.txt";
+char datafile[100] = "../data/usanet";
+#endif
+
+char testfile[100] = "../testing/";
+int n[MAX] = {0};
 int ct = 0;
+int blocked = 0;
+
+bool compare(vi a, vi b)
+{
+    return (n[*max_element(a.begin(), a.end())] < n[*max_element(b.begin(), b.end())]);
+}
 
 vector<int> colors;
-typedef struct state
+vector<vector<int> > colv;
+
+int W[MAX*(MAX-1)];
+
+struct state
 {
 	int x;
 	vector<vector<int> > paths;
 	vector<vector<int> > pig;
-}state;
+};
+typedef struct state state;
+vector<state> createNewStates(vector<vector<int> > c, vector<vector<int> > p, vector<vector<int> > pig);
 
 int edge_value(vector<int> a, vector<int> b)
 {
@@ -35,6 +88,8 @@ int edge_value(vector<int> a, vector<int> b)
 	}
 	return v;
 }
+
+void display(vvi p);
 
 double dist(int x, int y)
 {
@@ -61,7 +116,7 @@ int cost(vector<int> p)
 	int c = 0;
 	for(unsigned int i = 0; i < p.size()-1; i++)
 		if(dist(p[i], p[i+1]) != INT_MAX)
-		c += dist(p[i], p[i+1]);
+			c += dist(p[i], p[i+1]);
 	return c;
 }		
 
@@ -129,19 +184,19 @@ vector<vector<int> > paths_to_reg(int x)
 		return c;
 }
 
-pair<state,int> removeBest(vector<state> S, int d)
+pair<state,int> removeBest(vector<state> st, int d)
 {
-	unsigned int min = 0;
-	int mincost = 0;
-	for(unsigned int i = 0; i < S.size(); i++)
+	unsigned int min = 0, maxel;
+	int mincost = INT_MAX;
+	for(unsigned int i = 0; i < st.size(); i++)
 	{
-		int c = ceil(dist(S[i].x, d)/r);
-		unsigned int s = S[i].paths.size();
-		if(s <= S[min].paths.size() && c <= mincost)
-			min = i, mincost = c;
+		int c = ceil(dist(st[i].x, d)/(double)r);
+		unsigned int s = st[i].paths.size() -1 + c;
+		if(s <= mincost)
+			mincost = s, min = i;
 	}
-	state s = S[min];
-	//S.erase(S.begin() + min);
+	state s = st[min];
+	//S.erase(S.begin() + maxelin);
 	return make_pair(s, min);
 }
 
@@ -151,25 +206,44 @@ void display(vector<vector<int> > p)
 	{
 		for(unsigned int j = 0; j < p[i].size(); j++)
 			cout<< p[i][j] <<" ";
-		cout<<endl;
+		cout << "Cost: " << cost(p[i]) << endl;
 	}
 }
-int n[MAX];
-void update_count(vector<vector<int> > p)
+
+bool count_wav(vector<vector<int> > p)
 {
-	//display(p);
+	for(unsigned int i = 0; i < p.size(); i++)
+	{
+		for(unsigned int j = 0; j < p[i].size(); j++)
+		{
+			if(W[p[i][j]*(MAX-1)+p[i][j]] == ncolor)
+				return false;
+		}
+	}
+	for(unsigned int i = 0; i < p.size(); i++)
+	{
+		for(unsigned int j = 0; j < p[i].size(); j++)
+		{
+			W[p[i][j]*(MAX-1)+p[i][j]] ++;
+			//if(W[p[i][j]*(MAX-1)+p[i][j]] > ncolor)
+			//	blocked++;
+		}
+	}
+	return true;
+}
+
+bool update_count(vector<vector<int> > p)
+{
 	for(unsigned int i = 0; i < p.size()-1; i++)
 	{
 		//n[p[i].front()-1]++;
-		printf("Node %d\n", p[i].back());
+		if(n[p[i].back()-1] == REG_MAX)
+			return false;
 		n[p[i].back()-1]++;
 	}
-	cout << "Reg: " ;
-	for(unsigned int i = 0; i < sizeof(n)/sizeof(n[0]); i++)
-		cout<< n[i]<<" ";
+	return true;
 }
 
-vector<state> createNewStates(vector<vector<int> > c, vector<vector<int> > p, vector<vector<int> > pig);
 void routing(int s, int d)
 {
 	vector<state> states;
@@ -181,18 +255,22 @@ void routing(int s, int d)
 	{
 		pair<state,int> ob = removeBest(states, d);
 		state obj = ob.first;
+		//cout<<obj.x<<endl;
 		states.erase(states.begin() + ob.second);
 		//cout<<obj.x<<endl;
 		if(obj.x == d)
 		{
-			display(obj.paths);
+			//cout<<"Segments for "<< s<<" to "<<d<<endl;
+			//display(obj.paths);
+			if(obj.paths.size() - 1 > MAXSEG) {blocked++; cout << "Blocked for S"<<endl; return;}
+			if(!count_wav(obj.paths)){	blocked++; cout << "Blocked for W"<<endl; return; }
 			ct += obj.paths.size() - 1;
-			update_count(obj.paths);
+			if(!update_count(obj.paths))	{ blocked++; cout << "Blocked for RE"<<endl; return; } 
 			return;
 		}
 		else
 		{
-			if(dist(obj.x, d) <= r)
+			if(dist(obj.x, d) > r)
 			{
 				c.clear();
 				c = make_path(obj.x, d);
@@ -203,10 +281,8 @@ void routing(int s, int d)
 			else
 			{
 				c.clear();
-				c = paths_to_reg(obj.x);
+				c = make_path(obj.x, d);
 			}
-			if(obj.x != s)
-				n[obj.x-1]++;
 			vector<state> t = createNewStates(c, obj.paths, obj.pig);
 			for(unsigned int i = 0; i < t.size(); i++)
 				states.push_back(t[i]);
@@ -214,11 +290,14 @@ void routing(int s, int d)
 	}
 }
 
-vector<int> assignListColors(int v)
+vector<int> assignListColors(vector<int> p)
 {
 	vector<int> x;
-	for(unsigned int i = 0; i < colors.size(); i++)
+	for(unsigned int i = 0; i < p.size(); i++)
+	{
+		//if()
 		x.push_back(colors[i]);
+	}
 	return x;
 }
 
@@ -268,6 +347,7 @@ vector<state> createNewStates(vector<vector<int> > c, vector<vector<int> > p, ve
 	for(unsigned int i = 0; i < c.size(); i++)
 	{
 		vector<vector<int> > pnew;
+		// pnew = P U c[i]
 		for(unsigned int j = 0; j < p.size(); j++)
 			pnew.push_back(p[j]);
 		pnew.push_back(c[i]);
@@ -278,12 +358,12 @@ vector<state> createNewStates(vector<vector<int> > c, vector<vector<int> > p, ve
 			break;
 		
 		for(unsigned int j = 0; j < pnew.size(); j++)
-			W.push_back(colors);	
-		if(listColors(pignew, W))
+			W.push_back(assignListColors(pnew[j]));	
+		if(listColors(pnew, W))
 		{
 			state t;
 			t.x = c[i].back();
-			//cout<<t.x<<endl;
+			//cout<<"Assigned Wavelength" <<endl;
 			t.paths = pnew;
 			t.pig = pignew;
 			st.push_back(t);
@@ -292,30 +372,48 @@ vector<state> createNewStates(vector<vector<int> > c, vector<vector<int> > p, ve
 	return st;
 }
 			
-int main()
+int main(int argc, char *argv[])
 {
+	strcat(testfile, argv[1]);
 	ct = 0;
 	for(unsigned int i = 0; i < sizeof(n)/sizeof(n[0]); i++)
 		n[i] = 0;
-	for(int i = 1; i <= 15; i++)
+	for(int i = 1; i <= ncolor; i++)
 		colors.push_back(i);
+	memset(W, 0, sizeof(W));
+	/*
+	uint edges = sizeof(n)*(sizeof(n)-1);
+	for(int i = 0; i < ncolor; i++)
+		for(uint j = 0; j < edges; j++)
+			colv[i][j] = 0;*/
 	//display(paths_to_reg(1));
 	ifstream fp(testfile);
 	string line;
+	clock_t start = clock();
 	while(getline(fp, line))
 	{
 		istringstream is(line);
 		int s, d;
 		is >> s, is >> d;
-		cout<<"Segments for "<< s<<" to "<<d<<endl;
 		routing(s, d);
-		cout<<ct<<endl;
+		//cout<<":= " << ct<<endl;
 	}
 	fp.close();
 	int sum = 0;
 	for(unsigned int i = 0; i < sizeof(n)/sizeof(n[0]); i++)
-		sum += n[i], cout<<n[i]<<endl;
-	cout<<sum<<endl;
-	cout<<"Avg:"<<(double)sum/N<<endl;
+		sum += n[i], cout<<n[i]<<" ";
+	cout<<endl;
+	cout<<"TOTAL: " << sum<<endl;
+	double mean = (double)sum/(sizeof(reg)/sizeof(reg[0])), sd = 0;
+	for(unsigned int i = 0; i < sizeof(reg)/sizeof(reg[0]); i++)
+		sd += pow((n[reg[i]-1]-mean), 2);
+	cout << "MEAN: " << mean << endl;
+	cout << "SD: " << sqrt(sd/(sizeof(reg)/sizeof(reg[0]))) << endl;
+	cout << "Blocked requests: " << blocked<<endl;
+	cout<<"Wavelengths: " << *max_element(W, W+MAX*(MAX-1))<<endl;
+	cout<<"Time: "<<(clock() - start)/(double)CLOCKS_PER_SEC<<endl;
+	/*for(int i = 0; i < MAX*(MAX-1); i++)
+		cout << W[i] << " ";
+	cout << endl;*/
 }
 

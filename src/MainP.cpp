@@ -21,7 +21,7 @@ using namespace std;
 
 void testDijkstraGraph()
 {
-	Graph* my_graph_pt = new Graph("../data/arpanet");
+	Graph* my_graph_pt = new Graph("../data/eon");
 	DijkstraShortestPathAlg shortest_path_alg(my_graph_pt);
 	BasePath* result =
 		shortest_path_alg.get_shortest_path(
@@ -31,9 +31,9 @@ void testDijkstraGraph()
 
 void testYenAlg()
 {
-	Graph my_graph("../data/arpanet");
+	Graph my_graph("../data/eon");
 	ofstream fp;
-	fp.open("../paths/arpanet/5.txt");
+	fp.open("../paths/eon/5.txt");
 
     for(int i = 1; i <= 20; i++)
     {

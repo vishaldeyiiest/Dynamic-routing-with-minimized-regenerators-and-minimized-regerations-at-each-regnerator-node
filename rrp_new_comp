@@ -1,0 +1,8 @@
+1. Comparison of call blocking probability vs no of regeneration at reg. node:(lambda = 8, 16, 24)
+(33% NODE= reg. node)
+Heuristics-old	Heuristics-1 Heuristics-2
+
+2. Time Comparison to be updated in terms of no of requests upto 500.
+
+Time comp with ILP and heuristic
+ 

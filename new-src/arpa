@@ -1,0 +1,567 @@
+Segments for 17 to 8
+17 13 11 9 Cost: 1095
+9 8 Cost: 616
+Segments for 19 to 4
+19 17 13 11 4 Cost: 927
+Segments for 7 to 16
+7 6 Cost: 572
+6 7 3 Cost: 809
+3 8 9 Cost: 1018
+9 11 13 15 16 Cost: 1377
+Segments for 5 to 11
+5 4 11 Cost: 1254
+Segments for 10 to 13
+10 19 17 13 Cost: 1285
+Segments for 7 to 10
+7 10 Cost: 754
+Segments for 13 to 15
+13 15 Cost: 291
+Segments for 2 to 12
+2 1 3 Cost: 1481
+3 8 9 Cost: 1018
+9 11 13 17 Cost: 1095
+17 20 14 18 12 Cost: 1303
+Segments for 2 to 16
+2 4 11 Cost: 1291
+11 13 15 16 Cost: 615
+Segments for 3 to 8
+3 8 Cost: 402
+Segments for 20 to 4
+20 17 13 11 4 Cost: 1281
+Segments for 10 to 17
+10 19 17 Cost: 1121
+Segments for 12 to 6
+12 18 14 20 17 Cost: 1303
+17 13 11 9 Cost: 1095
+9 8 3 Cost: 1018
+3 7 6 Cost: 809
+Segments for 13 to 11
+13 11 Cost: 169
+Segments for 10 to 20
+10 19 17 Cost: 1121
+17 20 Cost: 615
+Segments for 6 to 16
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 13 15 16 Cost: 1377
+Segments for 11 to 16
+11 13 15 16 Cost: 615
+Segments for 8 to 18
+8 12 18 Cost: 1161
+Segments for 5 to 7
+5 6 7 Cost: 1236
+Segments for 16 to 19
+16 15 13 17 19 Cost: 871
+Segments for 1 to 19
+1 6 Cost: 939
+6 7 3 Cost: 809
+3 8 9 Cost: 1018
+9 11 13 17 19 Cost: 1356
+Segments for 11 to 1
+11 13 17 Cost: 333
+17 13 11 9 Cost: 1095
+9 8 3 1 Cost: 1491
+Segments for 4 to 13
+4 11 13 Cost: 502
+Segments for 18 to 7
+18 14 20 17 Cost: 1284
+17 13 11 9 Cost: 1095
+9 8 3 7 Cost: 1255
+Segments for 9 to 1
+9 8 3 1 Cost: 1491
+Request: 5 to 20blocked
+Segments for 18 to 17
+18 16 15 13 17 Cost: 740
+Segments for 5 to 11
+5 4 11 Cost: 1254
+Segments for 7 to 15
+7 6 Cost: 572
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 13 15 Cost: 1222
+Segments for 10 to 14
+10 19 17 Cost: 1121
+17 13 15 16 18 14 Cost: 928
+Segments for 9 to 19
+9 11 13 17 19 Cost: 1356
+Segments for 19 to 15
+19 17 13 15 Cost: 716
+Segments for 5 to 15
+5 4 11 Cost: 1254
+11 13 15 Cost: 460
+Segments for 13 to 7
+13 17 Cost: 164
+17 13 11 9 Cost: 1095
+9 8 3 7 Cost: 1255
+Segments for 14 to 3
+14 15 13 17 Cost: 1420
+17 13 11 9 Cost: 1095
+9 8 3 Cost: 1018
+Segments for 9 to 18
+9 11 Cost: 762
+11 13 17 Cost: 333
+17 13 15 16 18 Cost: 740
+Request: 17 to 6blocked
+Segments for 4 to 18
+4 11 13 15 16 18 Cost: 1078
+Request: 7 to 14blocked
+Segments for 20 to 12
+20 14 18 12 Cost: 688
+Segments for 13 to 18
+13 15 16 18 Cost: 576
+Segments for 9 to 19
+9 11 13 17 19 Cost: 1356
+Segments for 8 to 17
+8 12 18 14 Cost: 1349
+14 12 18 16 15 13 17 Cost: 1487
+Segments for 14 to 19
+14 18 16 15 13 17 19 Cost: 1189
+Segments for 10 to 4
+10 19 17 Cost: 1121
+17 13 11 4 Cost: 666
+Segments for 3 to 18
+3 8 9 Cost: 1018
+9 11 Cost: 762
+11 13 15 16 18 Cost: 745
+Segments for 13 to 9
+13 17 Cost: 164
+17 13 11 9 Cost: 1095
+Segments for 13 to 5
+13 11 4 5 Cost: 1423
+Segments for 16 to 6
+16 19 17 Cost: 1459
+17 13 11 9 Cost: 1095
+9 8 3 Cost: 1018
+3 7 6 Cost: 809
+Segments for 9 to 4
+9 11 4 Cost: 1095
+Segments for 3 to 5
+3 7 6 5 Cost: 1473
+Segments for 11 to 8
+11 9 8 Cost: 1378
+Segments for 3 to 19
+3 1 6 Cost: 1412
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 13 17 19 Cost: 1356
+Segments for 10 to 15
+10 19 17 Cost: 1121
+17 13 15 Cost: 455
+Segments for 20 to 19
+20 19 Cost: 1006
+Segments for 14 to 8
+14 18 12 8 Cost: 1349
+Segments for 15 to 7
+15 13 17 Cost: 455
+17 13 11 9 Cost: 1095
+9 8 3 7 Cost: 1255
+Segments for 12 to 5
+12 18 16 15 14 Cost: 1269
+14 12 18 16 15 13 11 Cost: 1492
+11 4 5 Cost: 1254
+Segments for 3 to 15
+3 8 9 Cost: 1018
+9 11 13 15 Cost: 1222
+Segments for 2 to 16
+2 4 11 Cost: 1291
+11 13 15 16 Cost: 615
+Segments for 3 to 15
+3 8 9 Cost: 1018
+9 11 13 15 Cost: 1222
+Segments for 1 to 19
+1 3 7 6 Cost: 1282
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 13 17 19 Cost: 1356
+Segments for 1 to 10
+1 3 8 10 Cost: 1312
+Segments for 3 to 5
+3 7 6 5 Cost: 1473
+Segments for 16 to 15
+16 15 Cost: 155
+Segments for 13 to 20
+13 17 20 Cost: 779
+Segments for 13 to 15
+13 15 Cost: 291
+Segments for 1 to 2
+1 2 Cost: 1008
+Segments for 10 to 1
+10 8 3 1 Cost: 1312
+Segments for 1 to 4
+1 6 Cost: 939
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 4 Cost: 1095
+Segments for 9 to 17
+9 11 Cost: 762
+11 13 17 Cost: 333
+Segments for 12 to 15
+12 18 16 15 Cost: 304
+Segments for 1 to 3
+1 3 Cost: 473
+Segments for 20 to 4
+20 17 13 11 4 Cost: 1281
+Segments for 18 to 2
+18 16 15 14 Cost: 1250
+14 12 18 16 15 13 11 Cost: 1492
+11 4 2 Cost: 1291
+Segments for 20 to 1
+20 19 17 Cost: 1267
+17 13 11 9 Cost: 1095
+9 8 3 1 Cost: 1491
+Segments for 18 to 1
+18 16 15 13 17 Cost: 740
+17 13 11 9 Cost: 1095
+9 8 3 1 Cost: 1491
+Segments for 12 to 3
+12 18 14 20 17 Cost: 1303
+17 13 11 9 Cost: 1095
+9 8 3 Cost: 1018
+Segments for 3 to 8
+3 8 Cost: 402
+Segments for 19 to 17
+19 17 Cost: 261
+Segments for 7 to 11
+7 6 Cost: 572
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 Cost: 762
+Segments for 12 to 9
+12 18 14 20 17 Cost: 1303
+17 13 11 9 Cost: 1095
+Segments for 14 to 2
+14 12 18 16 15 13 11 Cost: 1492
+11 4 2 Cost: 1291
+Segments for 11 to 15
+11 13 15 Cost: 460
+Segments for 6 to 20
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 Cost: 762
+11 13 17 20 Cost: 948
+Segments for 12 to 18
+12 18 Cost: 19
+Segments for 15 to 13
+15 13 Cost: 291
+Segments for 17 to 19
+17 19 Cost: 261
+Segments for 18 to 17
+18 16 15 13 17 Cost: 740
+Segments for 20 to 15
+20 14 18 16 15 Cost: 954
+Segments for 18 to 20
+18 14 20 Cost: 669
+Segments for 14 to 10
+14 12 18 16 15 13 17 Cost: 1487
+17 19 10 Cost: 1121
+Segments for 3 to 17
+3 8 9 Cost: 1018
+9 11 13 17 Cost: 1095
+Segments for 18 to 1
+18 14 20 17 Cost: 1284
+17 13 11 9 Cost: 1095
+9 8 3 1 Cost: 1491
+Segments for 13 to 5
+13 11 4 5 Cost: 1423
+Segments for 13 to 4
+13 11 4 Cost: 502
+Segments for 14 to 6
+14 15 13 17 Cost: 1420
+17 13 11 9 Cost: 1095
+9 8 3 Cost: 1018
+3 7 6 Cost: 809
+Segments for 6 to 4
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 4 Cost: 1095
+Segments for 1 to 13
+1 6 Cost: 939
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 13 Cost: 931
+Segments for 4 to 13
+4 11 13 Cost: 502
+Segments for 10 to 20
+10 19 17 Cost: 1121
+17 20 Cost: 615
+Segments for 5 to 11
+5 4 11 Cost: 1254
+Segments for 15 to 2
+15 16 18 12 14 Cost: 1032
+14 20 17 13 11 Cost: 1429
+11 4 2 Cost: 1291
+Segments for 9 to 12
+9 11 Cost: 762
+11 13 15 16 18 12 Cost: 764
+Segments for 19 to 9
+19 17 Cost: 261
+17 13 11 9 Cost: 1095
+Segments for 7 to 17
+7 6 Cost: 572
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 13 17 Cost: 1095
+Request: 7 to 12blocked
+Segments for 17 to 4
+17 13 11 4 Cost: 666
+Segments for 14 to 10
+14 12 18 16 15 13 17 Cost: 1487
+17 19 10 Cost: 1121
+Segments for 10 to 6
+10 7 6 Cost: 1326
+Segments for 14 to 3
+14 20 17 Cost: 1096
+17 13 11 9 Cost: 1095
+9 8 3 Cost: 1018
+Segments for 8 to 14
+8 12 18 14 Cost: 1349
+Segments for 14 to 13
+14 18 16 15 13 Cost: 764
+Segments for 7 to 3
+7 3 Cost: 237
+Segments for 12 to 13
+12 18 14 20 17 Cost: 1303
+17 13 Cost: 164
+Request: 15 to 6blocked
+Segments for 15 to 4
+15 13 11 4 Cost: 793
+Segments for 19 to 14
+19 20 14 Cost: 1487
+Segments for 13 to 5
+13 11 4 5 Cost: 1423
+Segments for 11 to 1
+11 13 17 Cost: 333
+17 13 11 9 Cost: 1095
+9 8 3 1 Cost: 1491
+Segments for 5 to 18
+5 4 11 Cost: 1254
+11 13 17 Cost: 333
+17 13 15 16 18 Cost: 740
+Segments for 14 to 1
+14 12 18 16 15 13 17 Cost: 1487
+17 13 11 9 Cost: 1095
+9 8 3 1 Cost: 1491
+Segments for 2 to 7
+2 4 11 Cost: 1291
+11 13 17 Cost: 333
+17 13 11 9 Cost: 1095
+9 8 3 7 Cost: 1255
+Segments for 13 to 6
+13 17 Cost: 164
+17 13 11 9 Cost: 1095
+9 8 3 Cost: 1018
+3 7 6 Cost: 809
+Segments for 16 to 6
+16 19 17 Cost: 1459
+17 13 11 9 Cost: 1095
+9 8 3 Cost: 1018
+3 7 6 Cost: 809
+Segments for 6 to 3
+6 1 3 Cost: 1412
+Request: 17 to 6blocked
+Segments for 3 to 9
+3 8 9 Cost: 1018
+Segments for 20 to 19
+20 19 Cost: 1006
+Segments for 16 to 14
+16 15 14 Cost: 1120
+Segments for 2 to 14
+2 4 11 Cost: 1291
+11 13 15 16 18 14 Cost: 933
+Segments for 8 to 16
+8 12 18 16 Cost: 1291
+Segments for 18 to 4
+18 16 15 13 17 Cost: 740
+17 13 11 4 Cost: 666
+Segments for 16 to 11
+16 15 14 Cost: 1120
+14 12 18 16 15 13 11 Cost: 1492
+Segments for 6 to 19
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 13 17 19 Cost: 1356
+Segments for 19 to 18
+19 17 13 15 16 18 Cost: 1001
+Segments for 10 to 12
+10 19 17 13 11 Cost: 1454
+11 13 15 16 18 12 Cost: 764
+Segments for 3 to 5
+3 7 6 5 Cost: 1473
+Segments for 18 to 10
+18 16 15 13 17 Cost: 740
+17 19 10 Cost: 1121
+Segments for 9 to 17
+9 11 13 17 Cost: 1095
+Segments for 10 to 6
+10 7 6 Cost: 1326
+Segments for 3 to 14
+3 8 9 Cost: 1018
+9 11 Cost: 762
+11 13 15 16 18 14 Cost: 933
+Segments for 15 to 2
+15 16 18 12 14 Cost: 1032
+14 12 18 16 15 13 11 Cost: 1492
+11 4 2 Cost: 1291
+Segments for 12 to 10
+12 18 14 20 17 Cost: 1303
+17 19 10 Cost: 1121
+Segments for 17 to 15
+17 13 15 Cost: 455
+Segments for 10 to 2
+10 19 17 13 11 Cost: 1454
+11 4 2 Cost: 1291
+Segments for 2 to 7
+2 4 11 Cost: 1291
+11 13 17 Cost: 333
+17 13 11 9 Cost: 1095
+9 8 3 7 Cost: 1255
+Segments for 6 to 19
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 13 17 19 Cost: 1356
+Segments for 19 to 13
+19 17 13 Cost: 425
+Segments for 10 to 7
+10 7 Cost: 754
+Segments for 8 to 13
+8 9 11 Cost: 1378
+11 13 Cost: 169
+Segments for 12 to 5
+12 18 16 15 14 Cost: 1269
+14 12 18 16 15 13 11 Cost: 1492
+11 4 5 Cost: 1254
+Segments for 3 to 1
+3 1 Cost: 473
+Segments for 2 to 13
+2 4 11 13 Cost: 1460
+Segments for 7 to 6
+7 6 Cost: 572
+Segments for 6 to 1
+6 1 Cost: 939
+Segments for 8 to 19
+8 10 19 Cost: 1297
+Segments for 12 to 5
+12 18 16 15 14 Cost: 1269
+14 12 18 16 15 13 11 Cost: 1492
+11 4 5 Cost: 1254
+Segments for 13 to 15
+13 15 Cost: 291
+Segments for 10 to 3
+10 7 6 Cost: 1326
+6 1 3 Cost: 1412
+Segments for 18 to 13
+18 16 15 13 Cost: 576
+Segments for 10 to 4
+10 19 17 Cost: 1121
+17 13 11 4 Cost: 666
+Segments for 11 to 8
+11 9 8 Cost: 1378
+Segments for 17 to 8
+17 13 15 16 18 12 14 Cost: 1487
+14 18 12 8 Cost: 1349
+Segments for 5 to 6
+5 6 Cost: 664
+Segments for 15 to 13
+15 13 Cost: 291
+Segments for 20 to 7
+20 19 17 Cost: 1267
+17 13 11 9 Cost: 1095
+9 8 3 7 Cost: 1255
+Segments for 18 to 2
+18 12 14 Cost: 747
+14 15 13 11 Cost: 1425
+11 4 2 Cost: 1291
+Segments for 6 to 2
+6 1 3 Cost: 1412
+3 1 2 Cost: 1481
+Segments for 18 to 15
+18 16 15 Cost: 285
+Segments for 1 to 9
+1 6 Cost: 939
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+Segments for 20 to 14
+20 14 Cost: 481
+Segments for 4 to 9
+4 11 Cost: 333
+11 9 Cost: 762
+Segments for 18 to 1
+18 14 20 17 Cost: 1284
+17 13 11 9 Cost: 1095
+9 8 3 1 Cost: 1491
+Segments for 2 to 8
+2 4 11 Cost: 1291
+11 9 8 Cost: 1378
+Segments for 6 to 13
+6 7 3 Cost: 809
+3 8 9 Cost: 1018
+9 11 13 Cost: 931
+Segments for 16 to 2
+16 15 14 Cost: 1120
+14 12 18 16 15 13 11 Cost: 1492
+11 4 2 Cost: 1291
+Segments for 9 to 16
+9 11 13 15 16 Cost: 1377
+Segments for 14 to 9
+14 12 18 16 15 13 17 Cost: 1487
+17 13 11 9 Cost: 1095
+Segments for 12 to 11
+12 18 16 15 14 Cost: 1269
+14 12 18 16 15 13 11 Cost: 1492
+Segments for 12 to 7
+12 18 14 20 17 Cost: 1303
+17 13 11 9 Cost: 1095
+9 8 3 7 Cost: 1255
+Segments for 6 to 18
+6 7 3 Cost: 809
+3 8 9 Cost: 1018
+9 11 Cost: 762
+11 13 15 16 18 Cost: 745
+Segments for 10 to 3
+10 7 3 Cost: 991
+Segments for 12 to 11
+12 18 16 15 14 Cost: 1269
+14 12 18 16 15 13 11 Cost: 1492
+Segments for 4 to 17
+4 11 13 17 Cost: 666
+Segments for 1 to 2
+1 2 Cost: 1008
+Segments for 19 to 3
+19 17 Cost: 261
+17 13 11 9 Cost: 1095
+9 8 3 Cost: 1018
+Segments for 10 to 4
+10 19 17 13 11 Cost: 1454
+11 4 Cost: 333
+Request: 17 to 6blocked
+Request: 7 to 18blocked
+Segments for 7 to 17
+7 6 Cost: 572
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 13 17 Cost: 1095
+Segments for 5 to 16
+5 4 11 Cost: 1254
+11 13 15 16 Cost: 615
+Segments for 13 to 17
+13 17 Cost: 164
+Segments for 6 to 4
+6 1 3 Cost: 1412
+3 8 9 Cost: 1018
+9 11 4 Cost: 1095
+Segments for 4 to 12
+4 11 13 15 16 18 12 Cost: 1097
+Segments for 2 to 14
+2 4 11 Cost: 1291
+11 13 15 16 18 14 Cost: 933
+Segments for 16 to 15
+16 15 Cost: 155
+Segments for 4 to 8
+4 11 13 17 Cost: 666
+17 13 11 9 Cost: 1095
+9 8 Cost: 616
+0 0 26 0 0 12 0 0 49 0 31 0 0 13 0 0 43 0 0 0 
+TOTAL: 174
+Avg:1.74
+Blocked requests: 8
+Time: 271.203

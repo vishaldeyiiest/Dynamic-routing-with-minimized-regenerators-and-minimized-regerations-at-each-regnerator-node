@@ -3,8 +3,8 @@ using namespace std;
 
 int main()
 {
-	ifstream fp("../data/arpanet2");
-	ofstream fo("../data/arpanet");
+	ifstream fp("../data/eon2");
+	ofstream fo("../data/eon");
 	string line;
 	getline(fp, line);
 	//
