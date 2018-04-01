@@ -4,10 +4,10 @@
 #include <bits/stdc++.h>
 #include "helper.cpp"
 #include <vector>
-#define r 1500	//optical reach
+#define r 109	//optical reach
 #define ncolor 1000		
 #define N 100	
-#define MAXSEG 4	
+#define MAXSEG 3	
 #define REG_MAX 40			
 using namespace std;
 char testfile[100] = "../testing/";
@@ -21,18 +21,19 @@ char datafile[100] = "../data/njlata";
 #endif
 
 #if 1
-#define MAX 20
-int reg[] = {3, 6, 8, 9, 11, 14, 17};
-char file[100] = "../paths/arpanet/5.txt";
-char datafile[100] = "../data/arpanet";
+#define MAX 21
+int reg[] = {3, 4, 11, 9, 13, 20, 6, 16, 8};
+//int reg[] = {4, 5, 7, 10, 12, 14, 16, 19};
+char file[100] = "arpanet5.paths";
+char datafile[100] = "../networks/arpanet.txt";
 #endif
 
 // NSFNET 
 #if 0
 #define MAX 14
-int reg[] = {3, 4, 8, 12};
-char file[100] = "../paths/nsfnet/5.txt";
-char datafile[100] = "../data/nsfnet";
+int reg[] = {4, 5, 6, 8, 9, 13};
+char file[100] = "nsfnet5.paths";
+char datafile[100] = "../networks/nsfnet.txt";
 #endif
 
 #if 0

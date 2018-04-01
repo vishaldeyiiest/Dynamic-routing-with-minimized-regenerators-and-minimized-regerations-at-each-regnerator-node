@@ -1,21 +1,21 @@
 /*Implementation of the rrp problem with 
-	minimum number of regenerations at each node*/
+	minimum stages of regenerations*/
 
 #include <bits/stdc++.h>
 #include "helper.cpp"
-#define r 1500	//optical reach		
+#define r 109	//optical reach		
 #define ncolor 1000
 #define N 100	
-#define MAXSEG 1
+#define MAXSEG 3
 #define REG_MAX 40			
 using namespace std;
 // ARPANET 
 #if 1
-#define MAX 20
-int reg[] = {3, 4, 5, 8, 10, 12, 14, 17};
+#define MAX 21
+int reg[] = {3, 4, 11, 9, 13, 20, 6, 16, 8};
 //int reg[] = {4, 5, 10, 13, 14, 17};
-char file[100] = "../paths/arpanet/5.txt";
-char datafile[100] = "../data/arpanet";
+char file[100] = "arpanet5.paths";
+char datafile[100] = "../networks/arpanet.txt";
 #endif
 
 //EON
@@ -30,9 +30,9 @@ char datafile[100] = "../data/eon";
 // NSFNET 
 #if 0
 #define MAX 14
-int reg[] = {3, 4, 8, 12};
-char file[100] = "../paths/nsfnet/5.txt";
-char datafile[100] = "../data/nsfnet";
+int reg[] = {4, 5, 6, 8, 9, 13};
+char file[100] = "nsfnet5.paths";
+char datafile[100] = "../networks/nsfnet.txt";
 #endif
 
 //NJLATA
@@ -196,7 +196,7 @@ pair<state,int> removeBest(vector<state> st, int d)
 			mincost = s, min = i;
 	}
 	state s = st[min];
-	//S.erase(S.begin() + maxelin);
+	st.erase(st.begin() + min);
 	return make_pair(s, min);
 }
 
@@ -261,7 +261,7 @@ void routing(int s, int d)
 		if(obj.x == d)
 		{
 			//cout<<"Segments for "<< s<<" to "<<d<<endl;
-			//display(obj.paths);
+			display(obj.paths);
 			if(obj.paths.size() - 1 > MAXSEG) {blocked++; cout << "Blocked for S"<<endl; return;}
 			if(!count_wav(obj.paths)){	blocked++; cout << "Blocked for W"<<endl; return; }
 			ct += obj.paths.size() - 1;

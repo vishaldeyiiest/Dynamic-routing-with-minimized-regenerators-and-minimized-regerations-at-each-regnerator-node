@@ -3,17 +3,17 @@
 
 #include <bits/stdc++.h>
 #include "helper.cpp"
-#define r 189	//optical reach		
+#define r 109	//optical reach		
 #define ncolor 1000
 #define N 100	
-#define MAXSEG 1
+#define MAXSEG 3
 #define REG_MAX 40			
 using namespace std;
 
 // ARPANET 
-#if 0
-#define MAX 20
-int reg[] = {2, 3, 5, 7, 8, 10, 12, 15, 19};
+#if 1
+#define MAX 21
+int reg[] = {3, 4, 11, 9, 13, 20, 6, 16, 8};
 //int reg[] = {4, 5, 7, 10, 12, 14, 16, 19};
 char file[100] = "arpanet5.paths";
 char datafile[100] = "../networks/arpanet.txt";
@@ -29,9 +29,9 @@ char datafile[100] = "../data/eon";
 #endif
 
 // NSFNET 
-#if 1
+#if 0
 #define MAX 14
-int reg[] = {3, 4, 5, 7, 8, 12};
+int reg[] = {4, 5, 6, 8, 9, 13};
 char file[100] = "nsfnet5.paths";
 char datafile[100] = "../networks/nsfnet.txt";
 #endif
